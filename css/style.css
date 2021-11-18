@@ -95,6 +95,7 @@ header {
     border-radius: 50%;
 }
 
+
 .header-right_item i:hover{
     transition: 0.4s;
     background-color: rgba(0, 0, 0, 0.2);

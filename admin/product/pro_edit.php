@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../admin.css">
     <link rel="stylesheet" href="../product.css">
     <link rel="stylesheet" href="../add.css">
+    <link rel="stylesheet" href="../pagination.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384- fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Document</title>

@@ -1,4 +1,4 @@
-<div class ="pagination"id="pagination">
+<div class ="pagination"id="pagination" style="text-align: center;">
 <?php
 $param = "";
 if($search){

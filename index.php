@@ -118,14 +118,14 @@
             <!-- Account or Logout -->
             
             <div class="header-right_item">
-                <a href="./register.php">
+                <a href="./register.php" style="text-decoration: none; color: white; font-size: 16px">
                     <button>
                         
                     <?php
                         if(empty($_SESSION['current_user'])){
                             ?>
                             Đăng kí / Đăng nhập
-                            <a href="../login.php">Tai day</a> 
+                            <a href="../login.php" ></a> 
                             <?php } else {
                          $currentUser = $_SESSION['current_user'];
                         
