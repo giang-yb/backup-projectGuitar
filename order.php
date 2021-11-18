@@ -26,9 +26,21 @@
 </head>
 
 <body>
-    <header>
+    <?php 
+    session_start();
+    require('./db.php'); 
+    ?>
+    <?php 
+     if(empty($_SESSION['current_user'])){
+        $message = "Chưa đăng nhập";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        header('Location: ./register.php');
+        } else {
+        $currentUser = $_SESSION['current_user'];
+        ?>
+        <header>
         <div class="header-left">
-            <a href="index.html"><img src="./img/Logo-White-e1543120531648.png" alt=""></a>
+            <a href="index.php"><img src="./img/Logo-White-e1543120531648.png" alt=""></a>
             <div class="sp">
                 <div class="dropdown">
                     <a href="./product-category.html" style="text-decoration: none; color: whitesmoke;">Đàn Guitar</a>
@@ -97,24 +109,25 @@
         </div>
         <div class="header-right">
             <div class="header-right_item">
-                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                    ĐĂNG NHẬP / ĐĂNG KÝ
-                </button>
+            <a href="./register.php">
+                    <button>
+                    <?php
+                        if(empty($_SESSION['current_user'])){
+                            ?>
+                            Đăng kí / Đăng nhập
+                            <a href="../login.php">Tai day</a> 
+                            <?php } else {
+                         $currentUser = $_SESSION['current_user'];
+                        
+                        ?>
+                        <a href="logout.php">Xin chào <?= $currentUser['user_name'] ?></a>
+                        
+                        <?php
+                        }
+                        ?>
+                    </button>
+                </a>
             </div>
-            <div class="header-right_item">
-                <a href="cart.html" style="color: whitesmoke;"> <i class="fas fa-shopping-bag"></i> </a>
-            </div>
-            <div class="header-right_item" onclick="openNav()">
-                <i class="fas fa-search"></i>
-            </div>
-            <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                    <input type="text" placeholder="Tìm kiếm..." id="id_text" style="outline: none;">
-                    <button type="submit"><i class="fas fa-search" style="color: whitesmoke;"></i></button>
-                </div>
-            </div>
-
         </div>
     </header>
 
@@ -285,6 +298,9 @@
             header.classList.toggle("sticky", window.scrollY > 0);
         })
     </script>
+        <?php
+        }
+    ?>
 </body>
 
 </html>
